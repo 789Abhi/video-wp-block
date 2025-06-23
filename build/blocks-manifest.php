@@ -21,6 +21,32 @@ return array(
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
 		'render' => 'file:./render.php',
-		'viewScript' => 'file:./view.js'
+		'viewScript' => 'file:./view.js',
+		'attributes' => array(
+			'videoId' => array(
+				'type' => 'integer',
+				'default' => null
+			),
+			'videoTitle' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'videoGuid' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'libraryId' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'alignment' => array(
+				'type' => 'string',
+				'default' => 'center'
+			),
+			'width' => array(
+				'type' => 'number',
+				'default' => 100
+			)
+		)
 	)
 );

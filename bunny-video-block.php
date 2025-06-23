@@ -57,3 +57,23 @@ function create_block_bunny_video_block_block_init() {
 	}
 }
 add_action( 'init', 'create_block_bunny_video_block_block_init' );
+
+/**
+ * Register REST API fields for video custom post type
+ */
+function bunny_video_block_register_rest_fields() {
+	register_rest_field('video', '_bvp_guid', [
+		'get_callback' => function ($post_arr) {
+			return get_post_meta($post_arr['id'], '_bvp_guid', true);
+		},
+		'schema' => null,
+	]);
+	
+	register_rest_field('video', '_bvp_library_id', [
+		'get_callback' => function ($post_arr) {
+			return get_post_meta($post_arr['id'], '_bvp_library_id', true);
+		},
+		'schema' => null,
+	]);
+}
+add_action('rest_api_init', 'bunny_video_block_register_rest_fields');
